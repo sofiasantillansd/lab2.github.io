@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <title>innerHTML</title>
+</head>
+<style>
+
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.scene {
+  display: block;
+  background-color: black;
+  width: 1280px;
+  height: 720px;
+}
+
+.result {
+    font-family: 'VT323', monospace;
+    color: #4AF1F2;
+    font-size: 57px;
+    position: absolute;
+    top: 74%;
+}
+
+.ball {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 35px;
+  background-color: #5fe6ff;
+  position: absolute;
+  color: #FFFAFA;
+  padding: 30px;
+  border-radius: 190px;
+  animation: moving-button;
+  animation-duration: 10s;
+  animation-iteration-count: infinite; 
+}
+
+@keyframes moving-button {
+  0% {
+    
+    left: 150px;
+    top: 500px;
+    transform: rotate(0deg)
+  }
+  10% {
+    left: 800px;
+    top: 200px;
+  }
+  20% {
+    top: 200px;
+    left: 90px;
+  }
+  25% {
+    left: 400px;
+    top: 200px;
+  }
+  30% {
+    left: 90px;
+    top: 200px;
+    transform: rotate(30deg)
+  }
+  40% {
+   left: 900px;
+    top: 200px;
+  }
+  50% {
+    
+    left:300px;
+    top: 588px;
+    transform: rotate(-30deg)
+  }
+  75% {
+    left: 1040px;
+    transform: rotate(90deg)
+  }
+  100% {
+    
+    top: 500px;
+    left: 150px;
+    transform: rotate(-720deg)
+  }
+}
+
+.ball:hover {
+ color: #a5ccb9;
+ background-color:#5fe6ff;
+ font-size: 15px;
+ padding: 60px;
+}
+
+.header {
+    border-inline-color: #4AF1F2;
+    background-color: black;
+    position: fixed;
+    top: 3%;
+    font-size: 77px;
+    border-block-color: #4AF1F2;
+    border-style: dotted;
+    width: 100%;
+    border-width: 0 0 5px 0;
+}
+
+code {
+    color: #4AF1F2;
+    padding-left: 40%;
+}
+</style>
+
+<body>
+    <div class="header">
+        <code>inlineHTML</code>
+    </div>
+    <div class="scene">
+  </div>
+  <div class="background"> </div> 
+<input type="button" onclick="myMessage()" value="Catch Me!" class="ball"></input>
+<p id="text" class="result"></p>
+
+<script>
+    function myMessage() {
+        document.getElementById('text').innerHTML = 'Oh goodie, you caught me!';
+    }
+</script>
+</body>
+</html>
